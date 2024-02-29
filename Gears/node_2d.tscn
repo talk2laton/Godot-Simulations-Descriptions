@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbh01o6cq38f7"]
+
+[ext_resource type="Script" path="res://ColorRect.gd" id="1_c7m6s"]
+[ext_resource type="Texture2D" uid="uid://bmwm6jcn47k3q" path="res://Driver.png" id="2_jgnn5"]
+[ext_resource type="Texture2D" uid="uid://cvvrrvrx05t0j" path="res://Driver3.png" id="3_cdhhi"]
+[ext_resource type="Texture2D" uid="uid://cw05cp7ixlyc7" path="res://Driver4.png" id="4_p855t"]
+[ext_resource type="Texture2D" uid="uid://ccsmgi6u8268d" path="res://Driver5.png" id="5_yxhkf"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 645.0
+script = ExtResource("1_c7m6s")
+
+[node name="Drive" type="Sprite2D" parent="ColorRect"]
+position = Vector2(200, 300)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_jgnn5")
+offset = Vector2(1, -18.9999)
+
+[node name="Drive2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(359, 300)
+rotation = 0.00174533
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_cdhhi")
+offset = Vector2(0.0301514, -1.25389)
+
+[node name="Drive2c" type="Sprite2D" parent="ColorRect/Drive2"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_jgnn5")
+offset = Vector2(1, -18.9999)
+
+[node name="Drive3" type="Sprite2D" parent="ColorRect"]
+position = Vector2(567, 300)
+rotation = -0.0785398
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_p855t")
+offset = Vector2(-0.25, -0.249908)
+
+[node name="Drive3c" type="Sprite2D" parent="ColorRect/Drive3"]
+scale = Vector2(0.285714, 0.285714)
+texture = ExtResource("2_jgnn5")
+offset = Vector2(1, -18.9999)
+
+[node name="Drive4" type="Sprite2D" parent="ColorRect"]
+position = Vector2(793, 300)
+rotation = -0.10472
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_yxhkf")
+offset = Vector2(-0.111145, -0.110992)
