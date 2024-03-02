@@ -42,9 +42,10 @@ func _ready():
 	ang7 = Drive7.rotation
 	omega = PI/30
 	
+	# setting the current time
 	var time = Time.get_time_dict_from_system()
 	secondhand.rotation = time["second"]*PI/30 - PI/2 - ang1
-	minutehand.rotation = time["minute"]*PI/30 - PI/2 - ang5
+	minutehand.rotation = time["minute"]*PI/30 + time["second"]*PI/1800 - PI/2 - ang5
 	hourhand.rotation =  time["hour"]*PI/6 + time["minute"]*PI/360 - PI/2 - ang7
 	pass # Replace with function body.
 
@@ -58,5 +59,5 @@ func _process(delta):
 	Drive4.rotation = -ang/12 + ang4
 	Drive5.rotation = ang/60 + ang5 # minutes
 	Drive6.rotation = -ang/180 + ang6
-	Drive7.rotation = ang/720 + ang7
+	Drive7.rotation = ang/720 + ang7 # hours
 	pass

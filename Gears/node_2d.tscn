@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbh01o6cq38f7"]
+[gd_scene load_steps=17 format=3 uid="uid://bbh01o6cq38f7"]
 
 [ext_resource type="Script" path="res://ColorRect.gd" id="1_c7m6s"]
 [ext_resource type="Texture2D" uid="uid://7a634iseuo4f" path="res://Driver3-1.png" id="2_gvive"]
 [ext_resource type="Texture2D" uid="uid://dcm0hkh7jpw5" path="res://Driver6-5.png" id="3_dutx8"]
 [ext_resource type="Texture2D" uid="uid://cddb6vnfeotae" path="res://Hand3-5.png" id="3_x0n10"]
+[ext_resource type="Texture2D" uid="uid://b2lvusm6ikntb" path="res://Driver15-5.png" id="4_5pum2"]
 [ext_resource type="Texture2D" uid="uid://ci83pactuev4w" path="res://Driver3-3.png" id="4_7wccp"]
 [ext_resource type="Texture2D" uid="uid://cw05cp7ixlyc7" path="res://Driver4.png" id="4_p855t"]
 [ext_resource type="Texture2D" uid="uid://i8liflnamktv" path="res://Marker1.png" id="6_5ltxf"]
@@ -12,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://w6xscphw88ts" path="res://Driver12-2.png" id="7_bjo4o"]
 [ext_resource type="Texture2D" uid="uid://cpytv1gw78lde" path="res://Hand6-4.png" id="8_5o5lb"]
 [ext_resource type="Texture2D" uid="uid://dqrc5iwc1o0jv" path="res://Hand3-2.png" id="8_ev2lr"]
+[ext_resource type="Texture2D" uid="uid://dgm03bewlr4qi" path="res://Driver15-2.png" id="10_6m10l"]
 [ext_resource type="Texture2D" uid="uid://do581bxhio8kl" path="res://Marker6-2.png" id="10_7e6hj"]
+[ext_resource type="Texture2D" uid="uid://cyyqcl4n4ctn" path="res://Driver15-4.png" id="13_07fwm"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,6 +38,12 @@ scale = Vector2(1.8, 1)
 texture = ExtResource("3_x0n10")
 offset = Vector2(181, 0)
 
+[node name="Pin1" type="Sprite2D" parent="ColorRect/Drive1"]
+z_index = 2
+rotation = 0.523599
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_5pum2")
+
 [node name="Drive2" type="Sprite2D" parent="ColorRect"]
 position = Vector2(361, 200)
 scale = Vector2(0.2, 0.2)
@@ -45,6 +54,10 @@ offset = Vector2(1, 1.00012)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_7wccp")
 offset = Vector2(1, -63.9999)
+
+[node name="Pin2" type="Sprite2D" parent="ColorRect/Drive2"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_5pum2")
 
 [node name="Drive3" type="Sprite2D" parent="ColorRect"]
 position = Vector2(414, 230)
@@ -58,6 +71,11 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_7wccp")
 offset = Vector2(1, -63.9999)
 
+[node name="Pin3" type="Sprite2D" parent="ColorRect/Drive3"]
+rotation = -0.523599
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_5pum2")
+
 [node name="Drive4" type="Sprite2D" parent="ColorRect"]
 position = Vector2(462.305, 166.644)
 rotation = -0.0174533
@@ -69,6 +87,11 @@ offset = Vector2(-0.0778809, -5.09698)
 scale = Vector2(0.333, 0.333)
 texture = ExtResource("4_7wccp")
 offset = Vector2(1, -63.9999)
+
+[node name="Pin4" type="Sprite2D" parent="ColorRect/Drive4"]
+rotation = 0.0174533
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("4_5pum2")
 
 [node name="Drive5" type="Sprite2D" parent="ColorRect"]
 position = Vector2(560, 220)
@@ -89,6 +112,12 @@ scale = Vector2(0.55, 0.3)
 texture = ExtResource("8_5o5lb")
 offset = Vector2(181.35, 0)
 
+[node name="Pin5" type="Sprite2D" parent="ColorRect/Drive5"]
+z_index = 1
+rotation = 0.0174533
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("10_6m10l")
+
 [node name="Drive6" type="Sprite2D" parent="ColorRect"]
 position = Vector2(493, 260)
 rotation = -0.0174533
@@ -100,6 +129,11 @@ offset = Vector2(-0.0778809, -5.09698)
 scale = Vector2(0.333, 0.333)
 texture = ExtResource("4_7wccp")
 offset = Vector2(1, -63.9999)
+
+[node name="Pin6" type="Sprite2D" parent="ColorRect/Drive6"]
+rotation = 0.0174533
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("4_5pum2")
 
 [node name="Drive7" type="Sprite2D" parent="ColorRect"]
 position = Vector2(423, 311)
@@ -113,6 +147,11 @@ rotation = -0.1309
 scale = Vector2(1.8, 1)
 texture = ExtResource("8_ev2lr")
 offset = Vector2(181, 0)
+
+[node name="Pin7" type="Sprite2D" parent="ColorRect/Drive7"]
+rotation = -0.1309
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("13_07fwm")
 
 [node name="SecondMarkers" type="Sprite2D" parent="ColorRect"]
 position = Vector2(300, 200)
@@ -128,5 +167,3 @@ texture = ExtResource("7_1reqm")
 position = Vector2(423, 311)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("10_7e6hj")
-
-[node name="Timer" type="Timer" parent="ColorRect"]
