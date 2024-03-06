@@ -1,0 +1,155 @@
+[gd_scene load_steps=18 format=3 uid="uid://b30lp7pq33krp"]
+
+[ext_resource type="Script" path="res://ColorRect.gd" id="1_cv512"]
+[ext_resource type="Texture2D" uid="uid://bnf1opkxuujfx" path="res://Driver10-2.png" id="2_iybxy"]
+[ext_resource type="Texture2D" uid="uid://c7s7lmmkwjfpq" path="res://Hand40-2.png" id="3_4vyce"]
+[ext_resource type="Texture2D" uid="uid://d4eqdjj3j7q7i" path="res://Driver20-5.png" id="3_wxlvy"]
+[ext_resource type="Texture2D" uid="uid://bg6yfcwfcjjxs" path="res://Driver20-3.png" id="4_ss4rk"]
+[ext_resource type="Texture2D" uid="uid://cbw0gt4ruyf5h" path="res://Driver30-1.png" id="5_i76jy"]
+[ext_resource type="Texture2D" uid="uid://f6vuxpjcf3ot" path="res://Driver25-5.png" id="6_lr77s"]
+[ext_resource type="Texture2D" uid="uid://bgjnnp8rm5wf2" path="res://Driver20-4.png" id="7_f71x0"]
+[ext_resource type="Texture2D" uid="uid://c0xhrx0na6yrv" path="res://Driver10-5.png" id="8_r1fxk"]
+[ext_resource type="Texture2D" uid="uid://4141weipdryp" path="res://Hand40-4.png" id="9_kfh87"]
+[ext_resource type="Texture2D" uid="uid://hjegu5pj2j6l" path="res://Driver20-1.png" id="9_ua4o2"]
+[ext_resource type="Texture2D" uid="uid://dtwvtl14cr8td" path="res://DriverFinal30-3.png" id="12_73nsw"]
+[ext_resource type="Texture2D" uid="uid://crw5aj3ilnwwt" path="res://Hand40-3.png" id="13_kxclt"]
+[ext_resource type="Texture2D" uid="uid://dwyeifaponi88" path="res://Marker40-1.png" id="14_ivwbv"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_enqpm"]
+
+[sub_resource type="Theme" id="Theme_utbpt"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_08bhc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 649.0
+script = ExtResource("1_cv512")
+
+[node name="Scale" type="Sprite2D" parent="ColorRect"]
+position = Vector2(200, 100)
+scale = Vector2(0.7, 0.7)
+
+[node name="Gear1" type="Sprite2D" parent="ColorRect/Scale"]
+position = Vector2(570, 325)
+rotation = -0.15708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_iybxy")
+
+[node name="SecondHand" type="Sprite2D" parent="ColorRect/Scale/Gear1"]
+z_index = 2
+scale = Vector2(0.5, 0.3)
+texture = ExtResource("3_4vyce")
+offset = Vector2(2715.21, 9.91309)
+
+[node name="Gear2" type="Sprite2D" parent="ColorRect/Scale"]
+position = Vector2(563, 190)
+rotation = 0.15708
+scale = Vector2(0.091, 0.091)
+texture = ExtResource("3_wxlvy")
+
+[node name="Gear3" type="Sprite2D" parent="ColorRect/Scale"]
+position = Vector2(442, 124)
+rotation = 0.349066
+scale = Vector2(0.093, 0.093)
+texture = ExtResource("4_ss4rk")
+
+[node name="Gear4" type="Sprite2D" parent="ColorRect/Scale"]
+position = Vector2(319, 258)
+rotation = -0.0698132
+scale = Vector2(0.089, 0.089)
+texture = ExtResource("5_i76jy")
+
+[node name="Gear5" type="Sprite2D" parent="ColorRect/Scale"]
+position = Vector2(364, 411)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("6_lr77s")
+
+[node name="Gear6" type="Sprite2D" parent="ColorRect/Scale"]
+position = Vector2(456, 398)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_iybxy")
+
+[node name="Gear7" type="Sprite2D" parent="ColorRect/Scale"]
+position = Vector2(570, 325)
+rotation = 0.0785398
+scale = Vector2(0.091, 0.091)
+texture = ExtResource("7_f71x0")
+
+[node name="MinuteHand" type="Sprite2D" parent="ColorRect/Scale/Gear7"]
+z_index = 1
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("9_kfh87")
+offset = Vector2(2709.5, 4.46191)
+
+[node name="Gear8" type="Sprite2D" parent="ColorRect/Scale"]
+position = Vector2(602, 405)
+rotation = 0.10472
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("8_r1fxk")
+
+[node name="Gear9" type="Sprite2D" parent="ColorRect/Scale"]
+position = Vector2(706, 350)
+rotation = 0.15708
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_ua4o2")
+
+[node name="Gear10" type="Sprite2D" parent="ColorRect/Scale"]
+position = Vector2(712, 230)
+rotation = -0.15708
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_wxlvy")
+
+[node name="Gear11" type="Sprite2D" parent="ColorRect/Scale"]
+position = Vector2(570, 325)
+scale = Vector2(0.087, 0.087)
+texture = ExtResource("12_73nsw")
+
+[node name="HourHand" type="Sprite2D" parent="ColorRect/Scale/Gear11"]
+z_index = 1
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("13_kxclt")
+offset = Vector2(2712.64, 0)
+
+[node name="Graduation" type="Sprite2D" parent="ColorRect/Scale"]
+position = Vector2(570, 325)
+scale = Vector2(0.105, 0.105)
+texture = ExtResource("14_ivwbv")
+
+[node name="Faster" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 382.0
+offset_right = 182.0
+offset_bottom = 421.0
+text = "Faster"
+
+[node name="Slower" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 461.0
+offset_right = 182.0
+offset_bottom = 496.0
+text = "Slower
+"
+
+[node name="CheckButton" type="CheckButton" parent="ColorRect"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_enqpm")
+layout_mode = 0
+offset_left = 66.0
+offset_top = 544.0
+offset_right = 202.0
+offset_bottom = 575.0
+theme = SubResource("Theme_utbpt")
+text = "Tick On/Off
+"
+icon = SubResource("ImageTexture_08bhc")
+
+[connection signal="pressed" from="ColorRect/Faster" to="ColorRect" method="_on_faster_pressed"]
+[connection signal="pressed" from="ColorRect/Slower" to="ColorRect" method="_on_slower_pressed"]
+[connection signal="toggled" from="ColorRect/CheckButton" to="ColorRect" method="_on_check_button_toggled"]
