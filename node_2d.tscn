@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://drrc6xvy2cwrl"]
+
+[ext_resource type="Script" path="res://ColorRect.gd" id="1_ttwh7"]
+[ext_resource type="Texture2D" uid="uid://bp5bkxk3quiec" path="res://DriverFinal10-2.png" id="2_3fe7a"]
+[ext_resource type="Texture2D" uid="uid://bvvv3jq1xwfdl" path="res://DriverFinal10-1.png" id="3_3hf4x"]
+[ext_resource type="Texture2D" uid="uid://51m4eevnbyve" path="res://DriverFinal10-4.png" id="4_v8csy"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 649.0
+script = ExtResource("1_ttwh7")
+
+[node name="Gear1" type="Sprite2D" parent="ColorRect"]
+position = Vector2(211, 320)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_3fe7a")
+
+[node name="Gear2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(579, 320)
+rotation = 0.314159
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_3hf4x")
+
+[node name="Gear3" type="Sprite2D" parent="ColorRect"]
+position = Vector2(947, 320)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_v8csy")
+
+[node name="Faster" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 736.0
+offset_top = 536.0
+offset_right = 848.0
+offset_bottom = 576.0
+text = "Faster
+"
+
+[node name="Slower" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 536.0
+offset_right = 984.0
+offset_bottom = 576.0
+text = "Slower
+"
+
+[node name="Pause" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = 536.0
+offset_right = 1128.0
+offset_bottom = 576.0
+text = "Pause"
+
+[connection signal="pressed" from="ColorRect/Faster" to="ColorRect" method="_on_faster_pressed"]
+[connection signal="pressed" from="ColorRect/Slower" to="ColorRect" method="_on_slower_pressed"]
+[connection signal="pressed" from="ColorRect/Pause" to="ColorRect" method="_on_pause_pressed"]

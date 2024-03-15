@@ -1,0 +1,138 @@
+[gd_scene load_steps=13 format=3 uid="uid://d1uvrlprkncka"]
+
+[ext_resource type="Script" path="res://ColorRect.gd" id="1_1qyq0"]
+[ext_resource type="Texture2D" uid="uid://du2g3c4qu7ub2" path="res://Block.png" id="2_cns5c"]
+[ext_resource type="Texture2D" uid="uid://djfbyg4j1lst7" path="res://Valve.png" id="3_12ipr"]
+[ext_resource type="Texture2D" uid="uid://btlnf6e0n640j" path="res://Spring.png" id="4_mrxg0"]
+[ext_resource type="Texture2D" uid="uid://do5ay5qaeyyph" path="res://Driver10-3.png" id="5_7ys5y"]
+[ext_resource type="Texture2D" uid="uid://dkjf0514c3uls" path="res://Driver20-3.png" id="6_dwdgp"]
+[ext_resource type="Texture2D" uid="uid://bxfxt8iuov4dw" path="res://Cam.png" id="7_lib1p"]
+[ext_resource type="Texture2D" uid="uid://dxprccyq1r2o3" path="res://Rod.png" id="8_isbqx"]
+[ext_resource type="Texture2D" uid="uid://yxo7mvx83ln6" path="res://Lever.png" id="9_b8f3t"]
+[ext_resource type="Texture2D" uid="uid://dv27667orqfog" path="res://Connect.png" id="10_d0gph"]
+[ext_resource type="Texture2D" uid="uid://b7l1s7l3rpliu" path="res://Piston.png" id="11_wq2sj"]
+[ext_resource type="Texture2D" uid="uid://cmu1mixknbbj1" path="res://Crank.png" id="12_jca3p"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1160.0
+offset_bottom = 700.0
+script = ExtResource("1_1qyq0")
+
+[node name="Block" type="Sprite2D" parent="ColorRect"]
+position = Vector2(560, 464)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_cns5c")
+offset = Vector2(0, -1777.14)
+
+[node name="Valve1" type="Sprite2D" parent="ColorRect/Block"]
+position = Vector2(719, -8170)
+scale = Vector2(1.55, 1.5)
+texture = ExtResource("3_12ipr")
+offset = Vector2(-3.84521, 797.802)
+
+[node name="Valve2" type="Sprite2D" parent="ColorRect/Block"]
+position = Vector2(-709, -8170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_12ipr")
+offset = Vector2(-3.84521, 797.802)
+
+[node name="Spring1" type="Sprite2D" parent="ColorRect/Block"]
+position = Vector2(709, -7150)
+scale = Vector2(0.85, 0.52)
+texture = ExtResource("4_mrxg0")
+offset = Vector2(0, -869.048)
+
+[node name="Spring2" type="Sprite2D" parent="ColorRect/Block"]
+position = Vector2(-709, -7150)
+scale = Vector2(0.85, 0.52)
+texture = ExtResource("4_mrxg0")
+offset = Vector2(0, -869.048)
+
+[node name="Gear1" type="Sprite2D" parent="ColorRect/Block"]
+position = Vector2(1560, -1140)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6_dwdgp")
+
+[node name="Cam1" type="Sprite2D" parent="ColorRect/Block/Gear1"]
+rotation = -2.35619
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("7_lib1p")
+offset = Vector2(1.13651, 335.695)
+
+[node name="Gear2" type="Sprite2D" parent="ColorRect/Block"]
+position = Vector2(-1560, -1140)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6_dwdgp")
+
+[node name="Cam2" type="Sprite2D" parent="ColorRect/Block/Gear2"]
+rotation = 2.35619
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("7_lib1p")
+offset = Vector2(1.13651, 335.695)
+
+[node name="Gear0" type="Sprite2D" parent="ColorRect/Block"]
+scale = Vector2(1.43, 1.43)
+texture = ExtResource("5_7ys5y")
+
+[node name="ConnectingRod1" type="Sprite2D" parent="ColorRect/Block"]
+position = Vector2(1560, -8260)
+scale = Vector2(5, 3.85)
+texture = ExtResource("8_isbqx")
+offset = Vector2(0, 880)
+
+[node name="ConnectingRod2" type="Sprite2D" parent="ColorRect/Block"]
+position = Vector2(-1560, -8260)
+scale = Vector2(5, 3.85)
+texture = ExtResource("8_isbqx")
+offset = Vector2(0, 880)
+
+[node name="Lever1" type="Sprite2D" parent="ColorRect/Block"]
+position = Vector2(1100, -8750)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("9_b8f3t")
+offset = Vector2(0.00195313, 276.667)
+
+[node name="Lever2" type="Sprite2D" parent="ColorRect/Block"]
+position = Vector2(-1100, -8750)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("9_b8f3t")
+offset = Vector2(0.00195313, 276.667)
+
+[node name="Connect" type="Sprite2D" parent="ColorRect/Block"]
+position = Vector2(0, -1215)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("10_d0gph")
+offset = Vector2(0, -617.5)
+
+[node name="Piston" type="Sprite2D" parent="ColorRect/Block"]
+position = Vector2(0, -4520)
+scale = Vector2(1.5, 1)
+texture = ExtResource("11_wq2sj")
+
+[node name="Crank" type="Sprite2D" parent="ColorRect/Block"]
+rotation = -1.5708
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("12_jca3p")
+offset = Vector2(410, 0)
+
+[node name="Faster" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 432.0
+offset_right = 105.0
+offset_bottom = 463.0
+text = "Faster
+"
+
+[node name="Slower" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 480.0
+offset_right = 109.0
+offset_bottom = 512.0
+text = "Slower"
+
+[connection signal="pressed" from="ColorRect/Faster" to="ColorRect" method="_on_faster_pressed"]
+[connection signal="pressed" from="ColorRect/Slower" to="ColorRect" method="_on_slower_pressed"]
