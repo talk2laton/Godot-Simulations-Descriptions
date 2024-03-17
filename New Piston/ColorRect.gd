@@ -35,7 +35,12 @@ var camang1
 var camang2
 var CrankRadius
 var ConnectorLength
+var ConnectorAngle
 var crankang
+var rev
+var RotationSpeed
+var stop
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -55,8 +60,9 @@ func _ready():
 	Piston = get_node("Block/Piston")
 	Connector = get_node("Block/Connect")
 	Crank = get_node("Block/Crank")
+	RotationSpeed = get_node("RotationSpeed");
 	
-	t = 0; omega = -1;
+	t = 0; omega = -PI/30; rev = 1; stop = 1
 	L1    = Spring1.position.y - Valve1.position.y
 	L2    = Spring2.position.y - Valve2.position.y
 	ang0  = Gear0.rotation
@@ -71,9 +77,8 @@ func _ready():
 	v10 = Valve1.position.y
 	v20 = Valve2.position.y
 	crankang = Crank.rotation;
-	CrankRadius = Connector.position.y;
+	CrankRadius = abs(Connector.position.y);
 	ConnectorLength = Connector.position.y - Piston.position.y
-	
 	
 
 	pass # Replace with function body.
@@ -81,8 +86,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	t +=delta
-	var ang = omega*t;
+	t +=delta*stop
+	var ang = rev*omega*t;
 	Gear0.rotation  = ang + ang0;   # seconds
 	Gear1.rotation  = _wrap(-ang/2 + ang1)
 	Gear2.rotation  = _wrap(-ang/2 + ang2)
@@ -92,21 +97,26 @@ func _process(delta):
 	Rod2.position.y = r20 - d2
 	Lever1.rotation = -atan(d1/(Rod1.position.x - Lever1.position.x))
 	Lever2.rotation = -atan(d2/(Rod2.position.x - Lever2.position.x))
-	Valve1.position.y = v10 + 0.9*d1;
-	Valve2.position.y = v20 + 0.9*d2;
+	Valve1.position.y = v10 + d1
+	Valve2.position.y = v20 + d2
 	Spring1.scale.y = spring_scale(Valve1.position.y, Spring1.position.y, L1, s10)
 	Spring2.scale.y = spring_scale(Valve2.position.y, Spring2.position.y, L2, s20)
-	Connector.position = CrankRadius*Vector2(cos(ang - crankang), sin(ang - crankang))
+	Crank.rotation = ang + crankang
+	ConnectorAngle = Crank.rotation - PI/2
+	Connector.position = CrankRadius*Vector2(cos(ConnectorAngle), sin(ConnectorAngle))
 	Piston.position.y = -sqrt(ConnectorLength**2 - Connector.position.x**2)+Connector.position.y
 	Connector.rotation = atan(Connector.position.x/(Piston.position.y-Connector.position.y))
-	Crank.rotation = ang + crankang
+	RotationSpeed.text = "Rev/Min = " + str(rev);
 	pass
 	
 func spring_scale(vy, sy, L, s0):
 	return s0*(sy - vy)/L
 	
 func rodtop(ang):
-	return 1.2*exp(-2*(ang - PI)**2)
+	if(3*PI/4<=ang && ang<=5*PI/4):
+		return (1 + cos(4*(ang -PI)))/1.6
+	else:
+		return 0
 	
 func _wrap(ang):
 	var a = abs(ang)
@@ -114,9 +124,13 @@ func _wrap(ang):
 	return a - 2*PI*n
 
 func _on_faster_pressed():
-	omega *= 2.0
+	rev *= 2.0
 	pass # Replace with function body.
 
 func _on_slower_pressed():
-	omega /= 2.0
+	rev /= 2.0
+	pass # Replace with function body.
+	
+func _on_stop_pressed():
+	stop = (stop + 1) % 2
 	pass # Replace with function body.
